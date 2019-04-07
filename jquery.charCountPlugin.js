@@ -1,4 +1,4 @@
 ;(function($){
-alert('Hello Git');
+alert('Hello World');
 
 })(JQuery);

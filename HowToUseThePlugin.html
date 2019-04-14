@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>How to Use Char Counter Plugin</title>
+</head>
+<body>
+<h1>This is a Heading</h1>
+<table>
+<tr>
+    <td>
+        <span>Title 1 <span class="required">*</span><br />
+            (<span>Maximum 2000 characters</span>)</span>
+    </td>
+    <td>
+        <input TextMode="MultiLine" ID="txt1" placeholder="Title 1" data-charcount="true" data-maxlen="2000" runat="server"></input>
+    </td>
+</tr>
+<tr>
+    <td>
+        <span>Title 2 <span class="required">*</span><br />
+            (<span>Maximum 1000 characters</span>)</span>
+    </td>
+    <td>
+        <input TextMode="MultiLine" ID="txt2" placeholder="Title 2" data-charcount="true" data-maxlen="1000" runat="server"></input>
+    </td>
+</tr>
+</table>
+<script type="text/javascript" src="jQuery.js")></script>
+<script type="text/javascript" src="jquery.charCountPlugin.js")></script>
+<script type="text/javascript">
+    (function ($) {
+        $(document).ready(function () {
+            $('[data-charcount="true"]').charcount();
+        });
+    })(jQuery);
+</script>
+</body>
+</html>

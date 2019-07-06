@@ -9,7 +9,8 @@
                 $( ctrl ).insertAfter( $this );
                 var limit = $this.attr("data-maxlen");
                 $this.keyup(function () {
-                       var len = $this.val().length;
+                       $('#spntxtMult'+ $this.attr('id')).css('display','block');
+					   var len = $this.val().length;
                        if (len > limit) {
 						   $this.val($this.val().substring(0, limit));
                            return;
@@ -25,7 +26,8 @@
                        }
 
                    }).focus(function () {
-                          var len = $this.val().length;
+                          $('#spntxtMult'+ $this.attr('id')).css('display','block');
+						  var len = $this.val().length;
                           if (len >= (limit - settings.NumOfCharOfAlert)) {
                               $('#spntxtMult'+ $this.attr('id')).css('color', settings.errFontColor).css('font-weight', settings.FontWeight);
                               ((limit - len) <= 1) ? $('#spntxtMult'+ $this.attr('id')).text(limit - len + " character left") : $('#spntxtMult'+ $this.attr('id')).text(limit - len + " characters left");
@@ -34,13 +36,18 @@
                               $('#spntxtMult'+ $this.attr('id')).css('color', settings.okFontColor).css('font-weight', settings.FontWeight);
                               $('#spntxtMult'+ $this.attr('id')).text(limit - len + " characters left");
                           }
-                      });
+                      }).blur(function(){
+							if(!settings.isAlwaysOn){
+								$('#spntxtMult'+ $this.attr('id')).css('display','none');
+						    }
+                    });
                });
         };
        $.fn.charcount.defaults = {
            errFontColor: 'red',
            okFontColor: 'green',
            FontWeight: 'bold',
-		   NumOfCharOfAlert: 20
+		   NumOfCharOfAlert: 20,
+           isAlwaysOn: true
        }
 })(jQuery);

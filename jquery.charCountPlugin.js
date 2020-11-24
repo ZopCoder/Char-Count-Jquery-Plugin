@@ -45,9 +45,9 @@
         };
        $.fn.charcount.defaults = {
            errFontColor: 'red',
-           okFontColor: 'green',
+           okFontColor: 'navy',
            FontWeight: 'bold',
-		   NumOfCharOfAlert: 20,
+		   NumOfCharOfAlert: 25,
            isAlwaysOn: true
        }
 })(jQuery);
